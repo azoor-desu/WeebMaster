@@ -13,8 +13,10 @@ public class MenuController : MonoBehaviour {
 	public static MenuController _singleton;
 	GameController gameCtrl;
 
-	public CharGroup hiragGroup;
-	public CharGroup kataGroup;
+	public string[] defaultTemplates = new string[] { "hiragana" };
+
+	//Groups of characters/words to load into game memory, identifiable by the string fileName
+	public List<CharGroup> charGroups = new List<CharGroup>();
 
 	public int wordsPerGame = 20;
 
@@ -29,34 +31,28 @@ public class MenuController : MonoBehaviour {
 
 		ChangeScreen(mainMenu);
 
-		//Check for files, create if not found.
-		LoadSaveFile("hiragana");
-		//LoadSaveFile("katakana");
-		Debug.LogWarning("Pls Enable Katakana Filecheck");
+		ReloadSaveFiles();
+	}
+
+	public void ReloadSaveFiles() {
+		charGroups.Clear();
+		foreach (string item in defaultTemplates) {
+			LoadSaveFile(item);
+		}
 	}
 
 	//Checks if save file exists. if not, create one fresh file.
 	void LoadSaveFile(string fileName) {
-		if (fileName == "hiragana") {
-			if (!System.IO.File.Exists(Application.persistentDataPath + "/" + fileName + ".json")) {
-				hiragGroup = LoadBlankFile((Resources.Load(fileName) as TextAsset).ToString());
-				string tosave = JsonUtility.ToJson(hiragGroup);
-				System.IO.File.WriteAllText(Application.persistentDataPath + "/" + fileName + ".json",tosave);
-			} else {
-				hiragGroup = JsonUtility.FromJson<CharGroup>(System.IO.File.ReadAllText(Application.persistentDataPath + "/" + fileName + ".json"));
-			}
+		if (!System.IO.File.Exists(Application.persistentDataPath + "/" + fileName + ".json")) {
+			charGroups.Add(LoadBlankFile(fileName,(Resources.Load(fileName) as TextAsset).ToString()));
+			string tosave = JsonUtility.ToJson(charGroups);
+			System.IO.File.WriteAllText(Application.persistentDataPath + "/" + fileName + ".json",tosave);
 		} else {
-			if (!System.IO.File.Exists(Application.persistentDataPath + "/" + fileName + ".json")) {
-				kataGroup = LoadBlankFile((Resources.Load(fileName) as TextAsset).ToString());
-				string tosave = JsonUtility.ToJson(kataGroup);
-				System.IO.File.WriteAllText(Application.persistentDataPath + "/" + fileName + ".json",tosave);
-			} else {
-				kataGroup = JsonUtility.FromJson<CharGroup>(System.IO.File.ReadAllText(Application.persistentDataPath + "/" + fileName + ".json"));
-			}
+			charGroups.Add(JsonUtility.FromJson<CharGroup>(System.IO.File.ReadAllText(Application.persistentDataPath + "/" + fileName + ".json")));
 		}
 	}
 
-	CharGroup LoadBlankFile(string rawInput) {
+	CharGroup LoadBlankFile(string groupName, string rawInput) {
 		string[] rawInputArray = rawInput.Split('\n');
 		List<string> rawInputList = new List<string>();
 		foreach (string item in rawInputArray) {
@@ -66,7 +62,7 @@ public class MenuController : MonoBehaviour {
 		}
 
 		//Put characters and romanji into corresponding vars.
-		CharGroup chrgrp = new CharGroup(rawInputList.Count);
+		CharGroup chrgrp = new CharGroup(groupName,rawInputList.Count);
 		for (int i = 0; i < rawInputList.Count; i++) {
 			string[] cells = rawInputList[i].Split(';');
 			chrgrp.character[i] = cells[0];
@@ -111,5 +107,16 @@ public class MenuController : MonoBehaviour {
 		ChangeScreen(mainMenu);
 	}
 	#endregion
+
+	//help functions
+	public CharGroup GetCharGrp(string grpName) {
+		for (int i = 0; i < charGroups.Count; i++) {
+			if (grpName == charGroups[i].groupName) {
+				return charGroups[i];
+			}
+		}
+		Debug.LogError("Character Group of name: " + grpName + " NOT FOUND");
+		return null;
+	}
 
 }
