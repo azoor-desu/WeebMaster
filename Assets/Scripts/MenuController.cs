@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour {
 	public RectTransform settingsMenu;
 	public RectTransform gameScreen;
 	public RectTransform chartScreen;
+	
 
 	public static MenuController _singleton;
 	GameController gameCtrl;
@@ -18,7 +19,7 @@ public class MenuController : MonoBehaviour {
 	//Groups of characters/words to load into game memory, identifiable by the string fileName
 	public List<CharGroup> charGroups = new List<CharGroup>();
 
-	public int wordsPerGame = 20;
+	public int wordsPerGame = 0;
 
 	void Awake() {
 		Application.targetFrameRate = 24; //for the best cinematic experience
@@ -53,7 +54,7 @@ public class MenuController : MonoBehaviour {
 		}
 	}
 
-	CharGroup LoadBlankFile(string groupName, string rawInput) {
+	public CharGroup LoadBlankFile(string groupName, string rawInput) {
 		string[] rawInputArray = rawInput.Split('\n');
 		List<string> rawInputList = new List<string>();
 		foreach (string item in rawInputArray) {
@@ -71,6 +72,11 @@ public class MenuController : MonoBehaviour {
 		}
 		
 		return chrgrp;
+	}
+
+	public void WriteSaveFile(string groupName) {
+		string tosave = JsonUtility.ToJson(GetCharGrp(groupName));
+		System.IO.File.WriteAllText(Application.persistentDataPath + "/" + groupName + ".json",tosave);
 	}
 
 	void ChangeScreen(RectTransform newScreen) {
@@ -102,6 +108,20 @@ public class MenuController : MonoBehaviour {
 	public void ButtHirag() {
 		ChangeScreen(gameScreen);
 		gameCtrl.currentGameMode = GameController.GameMode.Hiragana;
+	}
+
+	public void ButtKata() {
+		ChangeScreen(gameScreen);
+		gameCtrl.currentGameMode = GameController.GameMode.Katakana;
+	}
+
+	public void ButtBoth() {
+		ChangeScreen(gameScreen);
+		gameCtrl.currentGameMode = GameController.GameMode.Both;
+	}
+
+	public void ButtSettings() {
+		ChangeScreen(settingsMenu);
 	}
 
 	public void ButtBack() {

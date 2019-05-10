@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour {
 
 	int charIndex = 0;
 	int score = 0;
+	string currGrpName;
 	float timeStart;
 
 	void Awake() {
@@ -42,6 +43,11 @@ public class GameController : MonoBehaviour {
 		score = 0;
 		timeStart = Time.time;
 		rightWrong.SetActive(false);
+
+		inputField.interactable = true;
+		inputField.Select();
+		inputField.ActivateInputField();
+
 		if (coroutineGame != null) {
 			StopCoroutine(coroutineGame);
 		}
@@ -50,9 +56,9 @@ public class GameController : MonoBehaviour {
 
 	void PopulateRandomList() {
 		CharGroup hiragGrp = MenuController._singleton.GetCharGrp("hiragana");
-		//CharGroup kataGrp = MenuController._singleton.GetCharGrp("katakana");
+		CharGroup kataGrp = MenuController._singleton.GetCharGrp("katakana");
 		hiragArray = new float[hiragGrp.character.Length];
-		//kataArray = new float[kataArray.Length];
+		kataArray = new float[hiragGrp.character.Length];
 
 		//populate list with the latest data
 		for (int i = 0; i < hiragGrp.character.Length; i++) {
@@ -64,14 +70,14 @@ public class GameController : MonoBehaviour {
 			}
 		}
 
-		//for (int i = 0; i < kataGrp.character.Length; i++) {
-		//	//Get probability by totalAttempts / correct attempts. 100% correct = 1, 50% correct = 2 etc.
-		//	if (kataGrp.timesCorrect[i] == 0) { //prevent divide by zero error. needs a sufficiently large number.
-		//		kataArray[i] = 10;
-		//	} else {
-		//		kataArray[i] = kataGrp.timesAttempted[i] / kataGrp.timesCorrect[i];
-		//	}
-		//}
+		for (int i = 0; i < kataGrp.character.Length; i++) {
+			//Get probability by totalAttempts / correct attempts. 100% correct = 1, 50% correct = 2 etc.
+			if (kataGrp.timesCorrect[i] == 0) { //prevent divide by zero error. needs a sufficiently large number.
+				kataArray[i] = 10;
+			} else {
+				kataArray[i] = kataGrp.timesAttempted[i] / kataGrp.timesCorrect[i];
+			}
+		}
 	}
 
 	void DisplayScoreText() {
@@ -80,15 +86,34 @@ public class GameController : MonoBehaviour {
 		int seconds = Mathf.FloorToInt(timer - minutes * 60);
 		string niceTime = string.Format("{0:0}:{1:00}",minutes,seconds);
 		int totalqns = MenuController._singleton.wordsPerGame;
+		if (totalqns < 0) {
+			totalqns = charIndex;
+		}
 		scoreText.text = "Word: " + charIndex + "/" + totalqns + "\nScore: " + score + "/" + totalqns + "\nTime: " + niceTime;
 	}
 
 	void SaveProgress() {
-		print("Savegame");
+		if (Time.time > 1) {
+			print("Savegame");
+			switch (currentGameMode) {
+				case GameMode.Hiragana:
+				MenuController._singleton.WriteSaveFile("hiragana");
+				break;
+
+				case GameMode.Katakana:
+				MenuController._singleton.WriteSaveFile("katakana");
+				break;
+
+				case GameMode.Both:
+				MenuController._singleton.WriteSaveFile("hiragana");
+				MenuController._singleton.WriteSaveFile("katakana");
+				break;
+			}
+		}
 	}
 
 	public void SubmitAnswer() {
-		if (coroutineSubmit == null && inputField.text != "") {
+		if (gameRunning && coroutineSubmit == null && inputField.text != "") {
 			submittedAns = inputField.text;
 			inputField.text = "";
 			coroutineSubmit = StartCoroutine(SubmitAnswerCoroutine());
@@ -114,6 +139,7 @@ public class GameController : MonoBehaviour {
 	string submittedAns;
 
 	IEnumerator GameSeq() {
+		yield return null; //wait for 1 frame for GameMode to be udpated
 		submittedAns = "";
 		charIndex = 0;
 		string prevGrp = "";
@@ -123,7 +149,7 @@ public class GameController : MonoBehaviour {
 			PopulateRandomList();
 			ShowAnswer(prevGrp,prevIndex);
 
-			string currGrpName = "";
+			currGrpName = "";
 			int currIndex = 0;
 			string currAns = "";
 
@@ -135,16 +161,27 @@ public class GameController : MonoBehaviour {
 				case GameMode.Hiragana:
 				currGrpName = "hiragana";
 				currIndex = RandomProbabilityArrayIndex(hiragArray);
-				currGrp = MenuController._singleton.GetCharGrp(currGrpName);
-				currAns = currGrp.romanji[currIndex];
 				break;
 
 				case GameMode.Katakana:
+				currGrpName = "katakana";
+				currIndex = RandomProbabilityArrayIndex(kataArray);
 				break;
 
 				case GameMode.Both:
+				if (charIndex % 2 == 0) {
+					//if even
+					currGrpName = "hiragana";
+					currIndex = RandomProbabilityArrayIndex(hiragArray);
+				} else {
+					currGrpName = "katakana";
+					currIndex = RandomProbabilityArrayIndex(kataArray);
+				}
 				break;
 			}
+
+			currGrp = MenuController._singleton.GetCharGrp(currGrpName);
+			currAns = currGrp.romanji[currIndex];
 
 			SetCurrentCharacter(currGrp,currIndex);
 
@@ -164,8 +201,17 @@ public class GameController : MonoBehaviour {
 			prevGrp = currGrpName;
 			prevIndex = currIndex;
 
-			if (charIndex > MenuController._singleton.wordsPerGame) {
+			//print("SAVING correct: "+ currGrp.timesCorrect[currIndex] + " attempts: " + currGrp.timesAttempted[currIndex]);
+
+			if (MenuController._singleton.wordsPerGame != 0 && charIndex >= MenuController._singleton.wordsPerGame) {
 				gameRunning = false;
+				PopulateRandomList();
+				ShowAnswer(prevGrp,prevIndex);
+				nextCharText.text = "-";
+				charIndex = MenuController._singleton.wordsPerGame;
+
+				inputField.DeactivateInputField();
+				inputField.interactable = false;
 			}
 		}
 	}
@@ -175,13 +221,14 @@ public class GameController : MonoBehaviour {
 	}
 
 	void ShowAnswer(string prevGrp, int prevInex) {
+		
 		if (prevGrp == "") {
 			answerText.text = "-";
 			answerAccText.text = "Acc: -";
 		} else {
 			CharGroup temp = MenuController._singleton.GetCharGrp(prevGrp);
 			answerText.text = temp.character[prevInex] + " (" + temp.romanji[prevInex] + ")";
-			answerAccText.text = "Acc: " + (Mathf.Round(temp.timesCorrect[prevInex] / temp.timesAttempted[prevInex]).ToString()) + "%";
+			answerAccText.text = "Acc: " + ((float)temp.timesCorrect[prevInex] / (float)temp.timesAttempted[prevInex] * 100f).ToString("F2") + "%";
 		}
 	}
 
@@ -235,8 +282,6 @@ public class GameController : MonoBehaviour {
 	private void OnEnable() {
 		inputField.text = "";
 		coroutineSubmit = null;
-		inputField.Select();
-		inputField.ActivateInputField();
 
 		StartGame();
 	}
