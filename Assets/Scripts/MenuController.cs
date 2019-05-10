@@ -9,7 +9,7 @@ public class MenuController : MonoBehaviour {
 	public RectTransform settingsMenu;
 	public RectTransform gameScreen;
 	public RectTransform chartScreen;
-	
+
 
 	public static MenuController _singleton;
 	GameController gameCtrl;
@@ -25,7 +25,7 @@ public class MenuController : MonoBehaviour {
 		Application.targetFrameRate = 24; //for the best cinematic experience
 
 		if (_singleton == null) {
-			 _singleton = this;
+			_singleton = this;
 		}
 
 		gameCtrl = gameScreen.GetComponent<GameController>();
@@ -54,7 +54,7 @@ public class MenuController : MonoBehaviour {
 		}
 	}
 
-	public CharGroup LoadBlankFile(string groupName, string rawInput) {
+	public CharGroup LoadBlankFile(string groupName,string rawInput) {
 		string[] rawInputArray = rawInput.Split('\n');
 		List<string> rawInputList = new List<string>();
 		foreach (string item in rawInputArray) {
@@ -70,7 +70,7 @@ public class MenuController : MonoBehaviour {
 			chrgrp.character[i] = cells[0];
 			chrgrp.romanji[i] = cells[1];
 		}
-		
+
 		return chrgrp;
 	}
 
@@ -122,6 +122,10 @@ public class MenuController : MonoBehaviour {
 
 	public void ButtSettings() {
 		ChangeScreen(settingsMenu);
+	}
+
+	public void ButtChart() {
+		ChangeScreen(chartScreen);
 	}
 
 	public void ButtBack() {
