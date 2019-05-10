@@ -106,12 +106,13 @@ public class GameController : MonoBehaviour {
 	IEnumerator ScoreUpdate() {
 		DisplayScoreText();
 		while (gameRunning) {
-			yield return new WaitForSeconds(.5f);
+			yield return new WaitForSeconds(.2f);
 			DisplayScoreText();
 		}
 	}
 
 	string submittedAns;
+
 	IEnumerator GameSeq() {
 		submittedAns = "";
 		charIndex = 0;
@@ -120,6 +121,7 @@ public class GameController : MonoBehaviour {
 
 		while (gameRunning) {
 			PopulateRandomList();
+			ShowAnswer(prevGrp,prevIndex);
 
 			string currGrpName = "";
 			int currIndex = 0;
@@ -154,6 +156,7 @@ public class GameController : MonoBehaviour {
 			} else {
 				RightWrong(false);
 			}
+
 			//Reset
 			submittedAns = "";
 			charIndex++;
@@ -169,6 +172,17 @@ public class GameController : MonoBehaviour {
 
 	void SetCurrentCharacter(CharGroup currGrp,int index) {
 		nextCharText.text = currGrp.character[index];
+	}
+
+	void ShowAnswer(string prevGrp, int prevInex) {
+		if (prevGrp == "") {
+			answerText.text = "-";
+			answerAccText.text = "Acc: -";
+		} else {
+			CharGroup temp = MenuController._singleton.GetCharGrp(prevGrp);
+			answerText.text = temp.character[prevInex] + " (" + temp.romanji[prevInex] + ")";
+			answerAccText.text = "Acc: " + (Mathf.Round(temp.timesCorrect[prevInex] / temp.timesAttempted[prevInex]).ToString()) + "%";
+		}
 	}
 
 	void RightWrong(bool isCorrect) {
@@ -196,13 +210,14 @@ public class GameController : MonoBehaviour {
 		foreach (float item in inArray) {
 			sum += item;
 		}
+		
 		//Randomnize a float
 		float random = Random.Range(0,sum);
 		//Find corresponding index with random number
 		float currentSum = 0;
 		for (int i = 0; i < inArray.Length; i++) {
 			currentSum += inArray[i];
-			if (random >= currentSum) {
+			if (random <= currentSum) {
 				return i;
 			}
 		}

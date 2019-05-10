@@ -523,7 +523,7 @@ MonoBehaviour:
   scoreText: {fileID: 426572036}
   nextCharText: {fileID: 544457413}
   answerText: {fileID: 2025889047}
-  answerAccText: {fileID: 0}
+  answerAccText: {fileID: 899991549}
   rightWrongText: {fileID: 1068953722}
   inputField: {fileID: 1326974731}
   fieldReselectDelay: 0.1
@@ -2318,7 +2318,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 842.8, y: 195.7}
+  m_SizeDelta: {x: 967.7, y: 195.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1068953722
 MonoBehaviour:
@@ -2353,7 +2353,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WRONG
+  m_Text: CORRECT!
 --- !u!222 &1068953723
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3119,8 +3119,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -4, y: -586}
-  m_SizeDelta: {x: 429.3, y: 176.2}
+  m_AnchoredPosition: {x: 0, y: -586}
+  m_SizeDelta: {x: 546.3, y: 176.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532643121
 MonoBehaviour:
@@ -3135,7 +3135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.84705883}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:

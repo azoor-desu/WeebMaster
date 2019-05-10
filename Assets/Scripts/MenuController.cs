@@ -44,8 +44,9 @@ public class MenuController : MonoBehaviour {
 	//Checks if save file exists. if not, create one fresh file.
 	void LoadSaveFile(string fileName) {
 		if (!System.IO.File.Exists(Application.persistentDataPath + "/" + fileName + ".json")) {
-			charGroups.Add(LoadBlankFile(fileName,(Resources.Load(fileName) as TextAsset).ToString()));
-			string tosave = JsonUtility.ToJson(charGroups);
+			CharGroup newGrp = LoadBlankFile(fileName,(Resources.Load(fileName) as TextAsset).ToString());
+			charGroups.Add(newGrp);
+			string tosave = JsonUtility.ToJson(newGrp);
 			System.IO.File.WriteAllText(Application.persistentDataPath + "/" + fileName + ".json",tosave);
 		} else {
 			charGroups.Add(JsonUtility.FromJson<CharGroup>(System.IO.File.ReadAllText(Application.persistentDataPath + "/" + fileName + ".json")));
