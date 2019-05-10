@@ -23,7 +23,6 @@ public class ChartController : MonoBehaviour {
 		}
 
 		texts = temp.ToArray();
-		print(texts.Length);
 		SetChars(true);
 		hi.text = "Hiragana";
 		isHi = true;
