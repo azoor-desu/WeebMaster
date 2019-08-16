@@ -36,18 +36,18 @@ public class ChartController : MonoBehaviour {
 	void SetChars(bool hirag) {
 		for (int i = 0; i < texts.Length; i++) {
 			if (hirag) {
-				texts[i].text = MenuController._singleton.charMemory.hirag[i].character + "\n(" + MenuController._singleton.charMemory.romanji[i] + ")";
-				if (MenuController._singleton.charMemory.hirag[i].attempts<= 0) {
+				texts[i].text = MenuController._singleton.GetHirag(i) + "\n(" + MenuController._singleton.GetRomanji(i) + ")";
+				if (MenuController._singleton.GetHiragAttempts(i)<= 0) {
 					acc[i].text = "Acc: -";
 				} else {
-					acc[i].text = "Acc: " + ((float)MenuController._singleton.charMemory.hirag[i].correct / (float)MenuController._singleton.charMemory.hirag[i].attempts * 100f).ToString("F2") + "%";
+					acc[i].text = "Acc: " + ((float)MenuController._singleton.GetHiragCorrect(i) / (float)MenuController._singleton.GetHiragAttempts(i) * 100f).ToString("F2") + "%";
 				}
 			} else {
-				texts[i].text = MenuController._singleton.charMemory.kata[i].character + "\n(" + MenuController._singleton.charMemory.romanji[i] + ")";
-				if (MenuController._singleton.charMemory.kata[i].attempts <= 0) {
+				texts[i].text = MenuController._singleton.GetKata(i) + "\n(" + MenuController._singleton.GetRomanji(i)+ ")";
+				if (MenuController._singleton.GetKataAttempts(i) <= 0) {
 					acc[i].text = "Acc: -";
 				} else {
-					acc[i].text = "Acc: " + ((float)MenuController._singleton.charMemory.kata[i].correct / (float)MenuController._singleton.charMemory.kata[i].attempts * 100f).ToString("F2") + "%";
+					acc[i].text = "Acc: " + ((float)MenuController._singleton.GetKataCorrect(i) / (float)MenuController._singleton.GetKataAttempts(i) * 100f).ToString("F2") + "%";
 				}
 			}
 		}

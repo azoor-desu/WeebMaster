@@ -16,10 +16,9 @@ public class MenuController : MonoBehaviour {
 	public static MenuController _singleton;
 	GameController gameCtrl;
 
-	//Load both hirag and kata into memory to use during gameplay.
-	public CharMemory charMemory;
-	public Toggle[] allGrps;
-	public List<int> selectedGrps = new List<int>();
+	public CharMemory charMemory;   //Load both hirag and kata into memory to use during gameplay.
+	public Toggle[] allGrps; //Toggle buttons
+	public List<int> selectedItems = new List<int>(); //index of items that have been selected for gameplay
 
 	public int wordsPerGame = 0;
 
@@ -55,6 +54,7 @@ public class MenuController : MonoBehaviour {
 		}
 	}
 
+	//Returns a blank state template for writing to disk
 	public CharMemory LoadBlankFile() {
 		//load in the character list from disk
 		string[] charArrayRaw = (Resources.Load("DefaultList") as TextAsset).ToString().Split('\n');
@@ -121,126 +121,121 @@ public class MenuController : MonoBehaviour {
 		gameCtrl.currentGameMode = GameController.GameMode.Katakana;
 	}
 
-	public void ButtBoth() {
-		ChangeScreen(chooseGrp);
-		gameCtrl.currentGameMode = GameController.GameMode.Both;
-	}
-
 	public void ButtConfirmGrps() {
-		selectedGrps.Clear();
+		selectedItems.Clear();
 		foreach (Toggle item in allGrps) {
 			if (item.isOn) {
 				switch (item.name) {
 					case "Grp 0":
-					selectedGrps.Add(0);
-					selectedGrps.Add(1);
-					selectedGrps.Add(2);
-					selectedGrps.Add(3);
-					selectedGrps.Add(4);
+					selectedItems.Add(0);
+					selectedItems.Add(1);
+					selectedItems.Add(2);
+					selectedItems.Add(3);
+					selectedItems.Add(4);
 					break;
 					case "Grp 1":
-					selectedGrps.Add(5);
-					selectedGrps.Add(6);
-					selectedGrps.Add(7);
-					selectedGrps.Add(8);
-					selectedGrps.Add(9);
+					selectedItems.Add(5);
+					selectedItems.Add(6);
+					selectedItems.Add(7);
+					selectedItems.Add(8);
+					selectedItems.Add(9);
 					break;
 					case "Grp 2":
-					selectedGrps.Add(10);
-					selectedGrps.Add(11);
-					selectedGrps.Add(12);
-					selectedGrps.Add(13);
-					selectedGrps.Add(14);
+					selectedItems.Add(10);
+					selectedItems.Add(11);
+					selectedItems.Add(12);
+					selectedItems.Add(13);
+					selectedItems.Add(14);
 					break;
 					case "Grp 3":
-					selectedGrps.Add(15);
-					selectedGrps.Add(16);
-					selectedGrps.Add(17);
-					selectedGrps.Add(18);
-					selectedGrps.Add(19);
+					selectedItems.Add(15);
+					selectedItems.Add(16);
+					selectedItems.Add(17);
+					selectedItems.Add(18);
+					selectedItems.Add(19);
 					break;
 					case "Grp 4":
-					selectedGrps.Add(20);
-					selectedGrps.Add(21);
-					selectedGrps.Add(22);
-					selectedGrps.Add(23);
-					selectedGrps.Add(24);
+					selectedItems.Add(20);
+					selectedItems.Add(21);
+					selectedItems.Add(22);
+					selectedItems.Add(23);
+					selectedItems.Add(24);
 					break;
 					case "Grp 5":
-					selectedGrps.Add(25);
-					selectedGrps.Add(26);
-					selectedGrps.Add(27);
-					selectedGrps.Add(28);
-					selectedGrps.Add(29);
+					selectedItems.Add(25);
+					selectedItems.Add(26);
+					selectedItems.Add(27);
+					selectedItems.Add(28);
+					selectedItems.Add(29);
 					break;
 					case "Grp 6":
-					selectedGrps.Add(30);
-					selectedGrps.Add(31);
-					selectedGrps.Add(32);
-					selectedGrps.Add(33);
-					selectedGrps.Add(34);
+					selectedItems.Add(30);
+					selectedItems.Add(31);
+					selectedItems.Add(32);
+					selectedItems.Add(33);
+					selectedItems.Add(34);
 					break;
 					case "Grp 7":
-					selectedGrps.Add(38);
-					selectedGrps.Add(39);
-					selectedGrps.Add(40);
-					selectedGrps.Add(41);
-					selectedGrps.Add(42);
+					selectedItems.Add(38);
+					selectedItems.Add(39);
+					selectedItems.Add(40);
+					selectedItems.Add(41);
+					selectedItems.Add(42);
 					break;
 					case "Grp 8":
-					selectedGrps.Add(35);
-					selectedGrps.Add(36);
-					selectedGrps.Add(37);
-					selectedGrps.Add(43);
-					selectedGrps.Add(44);
-					selectedGrps.Add(45);
+					selectedItems.Add(35);
+					selectedItems.Add(36);
+					selectedItems.Add(37);
+					selectedItems.Add(43);
+					selectedItems.Add(44);
+					selectedItems.Add(45);
 					break;
 					case "Grp 9":
-					selectedGrps.Add(46);
-					selectedGrps.Add(47);
-					selectedGrps.Add(48);
-					selectedGrps.Add(49);
-					selectedGrps.Add(50);
+					selectedItems.Add(46);
+					selectedItems.Add(47);
+					selectedItems.Add(48);
+					selectedItems.Add(49);
+					selectedItems.Add(50);
 					break;
 					case "Grp 10":
-					selectedGrps.Add(51);
-					selectedGrps.Add(52);
-					selectedGrps.Add(53);
-					selectedGrps.Add(54);
-					selectedGrps.Add(55);
+					selectedItems.Add(51);
+					selectedItems.Add(52);
+					selectedItems.Add(53);
+					selectedItems.Add(54);
+					selectedItems.Add(55);
 					break;
 					case "Grp 11":
-					selectedGrps.Add(56);
-					selectedGrps.Add(57);
-					selectedGrps.Add(58);
-					selectedGrps.Add(59);
-					selectedGrps.Add(60);
+					selectedItems.Add(56);
+					selectedItems.Add(57);
+					selectedItems.Add(58);
+					selectedItems.Add(59);
+					selectedItems.Add(60);
 					break;
 					case "Grp 12":
-					selectedGrps.Add(61);
-					selectedGrps.Add(62);
-					selectedGrps.Add(63);
-					selectedGrps.Add(64);
-					selectedGrps.Add(65);
+					selectedItems.Add(61);
+					selectedItems.Add(62);
+					selectedItems.Add(63);
+					selectedItems.Add(64);
+					selectedItems.Add(65);
 					break;
 					case "Grp 13":
-					selectedGrps.Add(66);
-					selectedGrps.Add(67);
-					selectedGrps.Add(68);
-					selectedGrps.Add(69);
-					selectedGrps.Add(70);
+					selectedItems.Add(66);
+					selectedItems.Add(67);
+					selectedItems.Add(68);
+					selectedItems.Add(69);
+					selectedItems.Add(70);
 					break;
 				}
 			}
 		}
-
+		ChangeScreen(gameScreen);
 	}
 
 	public void ButtBackChoose() {
-		ChangeScreen(chooseMenu);
 		foreach (Toggle item in allGrps) {
 			item.isOn = false;
 		}
+		ChangeScreen(chooseMenu);
 	}
 
 	public void ButtSettings() {
@@ -257,5 +252,25 @@ public class MenuController : MonoBehaviour {
 	#endregion
 
 	//help functions
-
+	public string GetRomanji(int index) {
+		return charMemory.romanji[index];
+	}
+	public string GetHirag(int index) {
+		return charMemory.hirag[index].character;
+	}
+	public int GetHiragAttempts(int index) {
+		return charMemory.hirag[index].attempts;
+	}
+	public int GetHiragCorrect(int index) {
+		return charMemory.hirag[index].correct;
+	}
+	public string GetKata(int index) {
+		return charMemory.kata[index].character;
+	}
+	public int GetKataAttempts(int index) {
+		return charMemory.kata[index].attempts;
+	}
+	public int GetKataCorrect(int index) {
+		return charMemory.kata[index].correct;
+	}
 }
