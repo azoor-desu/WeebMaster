@@ -2464,6 +2464,41 @@ PrefabInstance:
       propertyPath: m_Text
       value: pa, pi, pu, pe, po
       objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2860,6 +2895,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: na, ni, nu, ne, no
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
@@ -4589,6 +4659,41 @@ PrefabInstance:
       propertyPath: m_Text
       value: sa, si, su, se, so
       objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5214,6 +5319,41 @@ PrefabInstance:
       propertyPath: m_Text
       value: za, ji, zu, ze, zo
       objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5535,7 +5675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000000867072, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 2584.1}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &730931410
@@ -6614,6 +6754,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: ma, mi, mu, me, mo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
@@ -7819,12 +7994,12 @@ MonoBehaviour:
   mainMenu: {fileID: 2096598352}
   chooseMenu: {fileID: 92628442}
   chooseGrp: {fileID: 277456796}
+  chooseGrpContent: {fileID: 0}
   settingsMenu: {fileID: 486867388}
   gameScreen: {fileID: 247125550}
   chartScreen: {fileID: 344337315}
-  defaultTemplates:
-  - hiragana
-  - katakana
+  allGrps: []
+  selectedGrps: 
   wordsPerGame: 0
 --- !u!1 &977992808
 GameObject:
@@ -8540,6 +8715,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: ta, chi, tsu, te, to
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
@@ -10251,6 +10461,41 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 92
       objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -10680,6 +10925,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: ha, hi, fu, he, ho
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
@@ -13594,6 +13874,41 @@ PrefabInstance:
       propertyPath: m_Text
       value: ga, gi, gu, ge, go
       objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -14743,6 +15058,41 @@ PrefabInstance:
       propertyPath: m_Text
       value: da, di, du, de, do
       objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -15369,6 +15719,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: ka, ki, ku, ke, ko
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
@@ -16530,6 +16915,41 @@ PrefabInstance:
       propertyPath: m_Text
       value: ra, ri, ru, re, ro
       objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -17587,6 +18007,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: ba, bi, bu, be, bo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
@@ -19119,6 +19574,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964868326}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGrp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983992371535823862, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 705381597218009940, guid: 34e90a0b6da8fbb4da38757dcca6b76b,
         type: 3}
