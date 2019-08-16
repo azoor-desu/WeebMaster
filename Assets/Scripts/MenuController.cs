@@ -6,18 +6,16 @@ public class MenuController : MonoBehaviour {
 
 	public RectTransform mainMenu;
 	public RectTransform chooseMenu;
+	public RectTransform chooseGrp;
 	public RectTransform settingsMenu;
 	public RectTransform gameScreen;
 	public RectTransform chartScreen;
 
-
 	public static MenuController _singleton;
 	GameController gameCtrl;
 
-	public string[] defaultTemplates = new string[] { "hiragana" };
-
-	//Groups of characters/words to load into game memory, identifiable by the string fileName
-	public List<CharGroup> charGroups = new List<CharGroup>();
+	//Load both hirag and kata into memory to use during gameplay.
+	public CharMemory charMemory;
 
 	public int wordsPerGame = 0;
 
@@ -32,51 +30,52 @@ public class MenuController : MonoBehaviour {
 
 		ChangeScreen(mainMenu);
 
-		ReloadSaveFiles();
-	}
-
-	public void ReloadSaveFiles() {
-		charGroups.Clear();
-		foreach (string item in defaultTemplates) {
-			LoadSaveFile(item);
-		}
+		LoadSaveFile();
 	}
 
 	//Checks if save file exists. if not, create one fresh file.
-	void LoadSaveFile(string fileName) {
-		if (!System.IO.File.Exists(Application.persistentDataPath + "/" + fileName + ".json")) {
-			CharGroup newGrp = LoadBlankFile(fileName,(Resources.Load(fileName) as TextAsset).ToString());
-			charGroups.Add(newGrp);
-			string tosave = JsonUtility.ToJson(newGrp);
-			System.IO.File.WriteAllText(Application.persistentDataPath + "/" + fileName + ".json",tosave);
+	public void LoadSaveFile() {
+		if (!System.IO.File.Exists(Application.persistentDataPath + "/saves.json")) {
+
+			//Create new save file format with katakana + hiragana, then write into the file.
+			CharMemory newItem = LoadBlankFile();
+			string tosave = JsonUtility.ToJson(newItem);
+			System.IO.File.WriteAllText(Application.persistentDataPath + "/saves.json",tosave);
+
+			//also sun bian load into charItems
+			charMemory = newItem;
+
 		} else {
-			charGroups.Add(JsonUtility.FromJson<CharGroup>(System.IO.File.ReadAllText(Application.persistentDataPath + "/" + fileName + ".json")));
+			charMemory = JsonUtility.FromJson<CharMemory>(System.IO.File.ReadAllText(Application.persistentDataPath + "/saves.json"));
 		}
 	}
 
-	public CharGroup LoadBlankFile(string groupName,string rawInput) {
-		string[] rawInputArray = rawInput.Split('\n');
-		List<string> rawInputList = new List<string>();
-		foreach (string item in rawInputArray) {
+	public CharMemory LoadBlankFile() {
+		//load in the character list from disk
+		string[] charArrayRaw = (Resources.Load("DefaultList") as TextAsset).ToString().Split('\n');
+
+		List<string> rawArray = new List<string>();
+		foreach (string item in charArrayRaw  ) {
 			if (item.Length > 0 && item != "\r") { // Remove all empty lines
-				rawInputList.Add(item.Trim((char)13)); //remove stupid invisible characters
+				rawArray.Add(item.Trim((char)13)); //remove stupid invisible characters
 			}
 		}
 
 		//Put characters and romanji into corresponding vars.
-		CharGroup chrgrp = new CharGroup(groupName,rawInputList.Count);
-		for (int i = 0; i < rawInputList.Count; i++) {
-			string[] cells = rawInputList[i].Split(';');
-			chrgrp.character[i] = cells[0];
-			chrgrp.romanji[i] = cells[1];
+		CharMemory chrm = new CharMemory(rawArray.Count);
+		for (int i = 0; i < rawArray.Count; i++) {
+			string[] cell = rawArray[i].Split(';');
+			chrm.hirag[i].character = cell[0];
+			chrm.kata[i].character = cell[1];
+			chrm.romanji[i] = cell[2];
 		}
 
-		return chrgrp;
+		return chrm;
 	}
 
-	public void WriteSaveFile(string groupName) {
-		string tosave = JsonUtility.ToJson(GetCharGrp(groupName));
-		System.IO.File.WriteAllText(Application.persistentDataPath + "/" + groupName + ".json",tosave);
+	public void WriteSaveFile() {
+		string tosave = JsonUtility.ToJson(charMemory);
+		System.IO.File.WriteAllText(Application.persistentDataPath + "/saves.json",tosave);
 	}
 
 	void ChangeScreen(RectTransform newScreen) {
@@ -95,6 +94,9 @@ public class MenuController : MonoBehaviour {
 		if (chartScreen != null) {
 			chartScreen.gameObject.SetActive(false);
 		}
+		if (chooseGrp != null) {
+			chooseGrp.gameObject.SetActive(false);
+		}
 
 		newScreen.gameObject.SetActive(true);
 	}
@@ -102,22 +104,25 @@ public class MenuController : MonoBehaviour {
 	#region buttons
 	public void ButtStart() {
 		ChangeScreen(chooseMenu);
-		//buttback delegate to set to mainmenu
 	}
 
 	public void ButtHirag() {
-		ChangeScreen(gameScreen);
+		ChangeScreen(chooseGrp);
 		gameCtrl.currentGameMode = GameController.GameMode.Hiragana;
 	}
 
 	public void ButtKata() {
-		ChangeScreen(gameScreen);
+		ChangeScreen(chooseGrp);
 		gameCtrl.currentGameMode = GameController.GameMode.Katakana;
 	}
 
 	public void ButtBoth() {
-		ChangeScreen(gameScreen);
+		ChangeScreen(chooseGrp);
 		gameCtrl.currentGameMode = GameController.GameMode.Both;
+	}
+
+	public void ButtBackChoose() {
+		ChangeScreen(mainMenu);
 	}
 
 	public void ButtSettings() {
@@ -134,14 +139,5 @@ public class MenuController : MonoBehaviour {
 	#endregion
 
 	//help functions
-	public CharGroup GetCharGrp(string grpName) {
-		for (int i = 0; i < charGroups.Count; i++) {
-			if (grpName == charGroups[i].groupName) {
-				return charGroups[i];
-			}
-		}
-		Debug.LogError("Character Group of name: " + grpName + " NOT FOUND");
-		return null;
-	}
 
 }

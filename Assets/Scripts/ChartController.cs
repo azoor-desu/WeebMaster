@@ -34,20 +34,21 @@ public class ChartController : MonoBehaviour {
 	}
 
 	void SetChars(bool hirag) {
-
-		CharGroup temp;
-		if (hirag) {
-			temp = MenuController._singleton.charGroups[0];
-		} else {
-			temp = MenuController._singleton.charGroups[1];
-		}
-
 		for (int i = 0; i < texts.Length; i++) {
-			texts[i].text = temp.character[i] + "\n(" + temp.romanji[i] + ")";
-			if (temp.timesAttempted[i] <= 0) {
-				acc[i].text = "Acc: 0%";
+			if (hirag) {
+				texts[i].text = MenuController._singleton.charMemory.hirag[i].character + "\n(" + MenuController._singleton.charMemory.romanji[i] + ")";
+				if (MenuController._singleton.charMemory.hirag[i].attempts<= 0) {
+					acc[i].text = "Acc: -";
+				} else {
+					acc[i].text = "Acc: " + ((float)MenuController._singleton.charMemory.hirag[i].correct / (float)MenuController._singleton.charMemory.hirag[i].attempts * 100f).ToString("F2") + "%";
+				}
 			} else {
-				acc[i].text = "Acc: " + ((float)temp.timesCorrect[i] / (float)temp.timesAttempted[i] * 100f).ToString("F2") + "%";
+				texts[i].text = MenuController._singleton.charMemory.kata[i].character + "\n(" + MenuController._singleton.charMemory.romanji[i] + ")";
+				if (MenuController._singleton.charMemory.kata[i].attempts <= 0) {
+					acc[i].text = "Acc: -";
+				} else {
+					acc[i].text = "Acc: " + ((float)MenuController._singleton.charMemory.kata[i].correct / (float)MenuController._singleton.charMemory.kata[i].attempts * 100f).ToString("F2") + "%";
+				}
 			}
 		}
 	}

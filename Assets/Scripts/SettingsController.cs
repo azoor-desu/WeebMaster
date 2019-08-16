@@ -20,15 +20,11 @@ public class SettingsController : MonoBehaviour {
 	}
 
 	public void ResetStats() {
-		RenewSavefile("hiragana");
-		RenewSavefile("katakana");
-		MenuController._singleton.ReloadSaveFiles();
+		CharMemory newMem = MenuController._singleton.LoadBlankFile();
+		string tosave = JsonUtility.ToJson(newMem);
+		System.IO.File.WriteAllText(Application.persistentDataPath + "/saves.json",tosave);
+
+		MenuController._singleton.charMemory = newMem;
 	}
 	#endregion
-
-	void RenewSavefile(string fileName) {
-		CharGroup newGrp = MenuController._singleton.LoadBlankFile(fileName,(Resources.Load(fileName) as TextAsset).ToString());
-		string tosave = JsonUtility.ToJson(newGrp);
-		System.IO.File.WriteAllText(Application.persistentDataPath + "/" + fileName + ".json",tosave);
-	}
 }
