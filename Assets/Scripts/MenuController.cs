@@ -228,7 +228,9 @@ public class MenuController : MonoBehaviour {
 				}
 			}
 		}
-		ChangeScreen(gameScreen);
+		if (selectedItems.Count > 0) {
+			ChangeScreen(gameScreen);
+		}
 	}
 
 	public void ButtBackChoose() {

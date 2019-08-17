@@ -60,23 +60,23 @@ public class GameController : MonoBehaviour {
 		while (gameRunning) {
 			RefreshProbabilityArray();
 			ShowAnswer(prevIndex);
-			int sctItmIndx = 0;
+			int randomIndexSelectedItem = 0;
 			string currAns = "";
 
 			//Pull a random character
-			sctItmIndx = RandomProbabilityArrayIndex(probabilityArray);
-			currAns = MenuController._singleton.GetRomanji(MenuController._singleton.selectedItems[sctItmIndx]);
+			randomIndexSelectedItem = RandomProbabilityArrayIndex(probabilityArray);
+			currAns = MenuController._singleton.GetRomanji(MenuController._singleton.selectedItems[randomIndexSelectedItem]);
 
-			SetCurrentCharacter(MenuController._singleton.selectedItems[sctItmIndx]);
+			SetCurrentCharacter(MenuController._singleton.selectedItems[randomIndexSelectedItem]);
 
 			yield return new WaitUntil(() => submittedAns != "");
 			if (submittedAns == currAns) {
 				RightWrong(true);
 				score++;
 				if (currentGameMode == GameMode.Hiragana) {
-					MenuController._singleton.charMemory.hirag[MenuController._singleton.selectedItems[sctItmIndx]].correct++;
+					MenuController._singleton.charMemory.hirag[MenuController._singleton.selectedItems[randomIndexSelectedItem]].correct++;
 				} else {
-					MenuController._singleton.charMemory.kata[MenuController._singleton.selectedItems[sctItmIndx]].correct++;
+					MenuController._singleton.charMemory.kata[MenuController._singleton.selectedItems[randomIndexSelectedItem]].correct++;
 				}
 			} else {
 				RightWrong(false);
@@ -85,11 +85,11 @@ public class GameController : MonoBehaviour {
 			//Reset
 			submittedAns = "";
 			wordsElapsed++;
-			prevIndex = sctItmIndx;
+			prevIndex = randomIndexSelectedItem;
 			if (currentGameMode == GameMode.Hiragana) {
-				MenuController._singleton.charMemory.hirag[MenuController._singleton.selectedItems[sctItmIndx]].attempts++;
+				MenuController._singleton.charMemory.hirag[MenuController._singleton.selectedItems[randomIndexSelectedItem]].attempts++;
 			} else {
-				MenuController._singleton.charMemory.kata[MenuController._singleton.selectedItems[sctItmIndx]].attempts++;
+				MenuController._singleton.charMemory.kata[MenuController._singleton.selectedItems[randomIndexSelectedItem]].attempts++;
 			}
 
 			if (MenuController._singleton.wordsPerGame != 0 && wordsElapsed >= MenuController._singleton.wordsPerGame) {
@@ -115,7 +115,7 @@ public class GameController : MonoBehaviour {
 					probabilityArray[i] = 100;
 				} else {
 					//Probability value = 1 / (correct / total)
-					probabilityArray[i] = 1f / (MenuController._singleton.GetHiragCorrect(MenuController._singleton.selectedItems[i]) / MenuController._singleton.GetHiragAttempts(MenuController._singleton.selectedItems[i]));
+					probabilityArray[i] = 1f / ((float)MenuController._singleton.GetHiragCorrect(MenuController._singleton.selectedItems[i]) / (float)MenuController._singleton.GetHiragAttempts(MenuController._singleton.selectedItems[i]));
 				}
 			} else { //KATAKANA
 
@@ -125,7 +125,7 @@ public class GameController : MonoBehaviour {
 					probabilityArray[i] = 100;
 				} else {
 					//Probability value = 1 / (correct / total)
-					probabilityArray[i] = 1f / (MenuController._singleton.GetKataCorrect(MenuController._singleton.selectedItems[i]) / MenuController._singleton.GetKataAttempts(MenuController._singleton.selectedItems[i]));
+					probabilityArray[i] = 1f / ((float)MenuController._singleton.GetKataCorrect(MenuController._singleton.selectedItems[i]) / (float)MenuController._singleton.GetKataAttempts(MenuController._singleton.selectedItems[i]));
 				}
 			}
 		}
@@ -197,6 +197,7 @@ public class GameController : MonoBehaviour {
 				answerText.text = MenuController._singleton.charMemory.kata[MenuController._singleton.selectedItems[_prevIndex]].character + " (" + MenuController._singleton.charMemory.romanji[_prevIndex] + ")";
 				answerAccText.text = "Acc: " + ((float)MenuController._singleton.charMemory.kata[MenuController._singleton.selectedItems[_prevIndex]].correct / (float)MenuController._singleton.charMemory.kata[MenuController._singleton.selectedItems[_prevIndex]].attempts * 100f).ToString("F2") + "%";
 			}
+			
 		}
 	}
 
@@ -226,9 +227,10 @@ public class GameController : MonoBehaviour {
 		foreach (float item in _probabilityArray) {
 			sum += item;
 		}
-		
+
 		//Randomnize a float
 		float random = Random.Range(0,sum);
+
 		//Find corresponding index with random number
 		float currentSum = 0;
 		for (int i = 0; i < _probabilityArray.Length; i++) {
@@ -237,6 +239,7 @@ public class GameController : MonoBehaviour {
 				return i;
 			}
 		}
+		
 		//If fails, return a complete random index.
 		Debug.LogWarning("Could not find a proper random array! Anyhow picking."); 
 		return Random.Range(0,_probabilityArray.Length);
